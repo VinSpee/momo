@@ -22,9 +22,7 @@ import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
 import * as React from 'react';
 
-
-const Index = () => {
-  const { handleConnect } = useEthers();
+const Index = () => (
   <Container height="100vh">
     <DarkModeSwitch />
     <Stack spacing="12">
@@ -37,7 +35,7 @@ const Index = () => {
         </Heading>
       </Stack>
       <Center>
-        <Button onClick={handleConnect} variant="solid" colorScheme="yellow">
+        <Button variant="solid" colorScheme="yellow">
           Connect your wallet
         </Button>
       </Center>
