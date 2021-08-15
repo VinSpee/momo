@@ -21,26 +21,33 @@ import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
 import * as React from 'react';
+import { useWeb3React } from '@web3-react/core';
 
-const Index = () => (
-  <Container height="100vh">
-    <DarkModeSwitch />
-    <Stack spacing="12">
-      <Stack spacing="6" p="4">
-        <Heading as="h1" size="4xl">
-          Ⓜ️😵Ⓜ️😮
-        </Heading>
-        <Heading as="h2" size="xl">
-          Speak your mind, <Text color="green.400">in emoji</Text>
-        </Heading>
+const Index = () => {
+  const web3React = useWeb3React();
+  const handleConnect = () => {
+    console.log(web3React);
+  };
+  return (
+    <Container height="100vh">
+      <DarkModeSwitch />
+      <Stack spacing="12">
+        <Stack spacing="6" p="4">
+          <Heading as="h1" size="4xl">
+            Ⓜ️😵Ⓜ️😮
+          </Heading>
+          <Heading as="h2" size="xl">
+            Speak your mind, <Text color="green.400">in emoji</Text>
+          </Heading>
+        </Stack>
+        <Center>
+          <Button onClick={handleConnect} variant="solid" colorScheme="yellow">
+            Connect your wallet
+          </Button>
+        </Center>
       </Stack>
-      <Center>
-        <Button variant="solid" colorScheme="yellow">
-          Connect your wallet
-        </Button>
-      </Center>
-    </Stack>
-  </Container>
-);
+    </Container>
+  );
+};
 
 export default Index;
